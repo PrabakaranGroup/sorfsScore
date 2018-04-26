@@ -3,13 +3,14 @@
 
 
 setwd("/Users/naru/Documents/Cambridge/s-ORFc/")
-sorfs <- read.csv("data/sorfsDb/human_PLsorf_database.txt",sep = ",",header = F)
+
+sorfs <- read.csv("data/sorfsDb/human_PLsorf_database.txt",sep = "\t",header = T)
 
 headaltorfs <-sorfs
-
 head(headaltorfs )
-codingCosmic <- read.csv("/Users/naru/Downloads/HGMD_PRO_2016.4_hg38.vcf", sep = "\t", header = T,skip = 13)
 
+humanDrivedMutations <- read.csv("data/CADD/v1.3/humanDerived_SNVs.vcf", sep = "\t", header = F)
+head(humanDrivedMutations)
 ##don't click on it twice 
 codingCosmic$X.CHROM <- paste("chr", codingCosmic$X.CHROM, sep="")
 
