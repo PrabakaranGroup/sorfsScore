@@ -4,17 +4,17 @@
 
 setwd("/Users/naru/Documents/Cambridge/s-ORFc/")
 
-sorfs <- read.csv("data/sorfsDb/human_PLsorf_database.txt",sep = "\t",header = T)
+sorfs <- read.csv("human_PLsorf_database.txt",sep = "\t",header = T)
 
 headaltorfs <-sorfs
 head(headaltorfs )
 
-humanDrivedMutations <- read.csv("data/CADD/v1.3/humanDerived_SNVs.vcf", sep = "\t", header = F)
+humanDrivedMutations <- read.csv("humanDerived_SNVs.vcf", sep = "\t", header = F)
 head(humanDrivedMutations)
 ##don't click on it twice 
-codingCosmic$X.CHROM <- paste("chr", codingCosmic$X.CHROM, sep="")
+humanDrivedMutations$V1 <- paste("chr", humanDrivedMutations$V1, sep="")
 
-headcodingCosmic <- codingCosmic
+headcodingCosmic <- humanDrivedMutations
 #combined <- sort(union(levels(headcodingCosmic$X.CHROM), levels(headaltorfs$V10)))
 head(headcodingCosmic)
 library(dplyr)
@@ -22,8 +22,8 @@ library(dplyr)
 #  inner_join(mutate(headcodingCosmic,X.CHROM=factor(X.CHROM, levels=combined)), by = c("V10" = "X.CHROM")) %>%
 #  filter(  V16 <= POS & POS <= V17)
 
-colnames(headaltorfs)[10] <- "X.CHROM"
+colnames(headcodingCosmic)[1] <- "Chromosome"
+head(headcodingCosmic)
+y<- inner_join(headaltorfs,headcodingCosmic, by = "Chromosome")  %>% filter(  Start_position <= V2 & V2 <= End_position)
 
-y<- inner_join(headaltorfs,headcodingCosmic, by = "X.CHROM")  %>% filter(  V16 <= POS & POS <= V17)
-
-write.csv(y,file="/Users/naru/Downloads/HGMD_mutations_mapped_to_all_identified_6248_sorfs_info.hg38_OverlapedsORfsoftblastnAndliftOver_inner_join.csv")
+write.csv(y,file="humanDriveSnv_map_to_sorfs.csv")
