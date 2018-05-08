@@ -1,16 +1,24 @@
 #region 
 
-perl annotate_variation.pl -regionanno -build hg38 -out  humanDerived_SNVs -dbtype phastConsElements100way humanDerived_SNVs.anninput humandb/ -thread 10 
-perl annotate_variation.pl -regionanno -build hg38 -out humanDerived_SNVs -dbtype cytoBand humanDerived_SNVs.anninput humandb/ -thread 10 
-perl annotate_variation.pl -regionanno -build hg38 -out humanDerived_SNVs -dbtype wgRna humanDerived_SNVs.anninput humandb/  -thread 10 
-perl annotate_variation.pl -regionanno -build hg38 -out humanDerived_SNVs -dbtype tfbsConsSites humanDerived_SNVs.anninput humandb/ -thread 10 
-perl annotate_variation.pl -regionanno -build hg38 -out humanDerived_SNVs -dbtype targetScanS humanDerived_SNVs.anninput humandb/  -thread 10 
-perl annotate_variation.pl -regionanno -build hg38 -out humanDerived_SNVs -dbtype genomicSuperDups humanDerived_SNVs.anninput humandb/ -thread 10 
-perl annotate_variation.pl -regionanno -build hg38 -out humanDerived_SNVs -dbtype dgvMerged humanDerived_SNVs.anninput humandb/ -thread 10  
-perl annotate_variation.pl -regionanno -build hg38 -out humanDerived_SNVs -dbtype gwasCatalog humanDerived_SNVs.anninput humandb/ -thread 10 
-perl annotate_variation.pl -regionanno -dbtype wgEncodeCaltechRnaSeqRawSignalRep1Gm12878CellLongpolyaBb12x75 -out humanDerived_SNVs humanDerived_SNVs.anninput humandb/  -thread 10 
-perl annotate_variation.pl -regionanno -dbtype wgEncodeBroadChipSeqPeaksGm12878H3k4me1 -out humanDerived_SNVs humanDerived_SNVs.anninput humandb/ -thread 10 
-perl annotate_variation.pl -regionanno -dbtype wgEncodeRegDnaseClustered humanDerived_SNVs.anninput humandb/  -out humanDerived_SNVs -thread 10 
+
+
+perl /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/annotate_variation.pl -regionanno -build hg38 -out  /mnt/workspace/prabakaranLab/sorfcScore/data/annotation/region/hgmd/hgmd_region -dbtype phastConsElements100way /mnt/workspace/prabakaranLab/sorfcScore/data/variantMapToSorfs/hgmd/hgmd_sorf_mutation.avinput /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/humandb/ -thread 10 
+perl /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/annotate_variation.pl -regionanno -build hg38 -out /mnt/workspace/prabakaranLab/sorfcScore/data/annotation/region/hgmd/hgmd_region -dbtype cytoBand /mnt/workspace/prabakaranLab/sorfcScore/data/variantMapToSorfs/hgmd/hgmd_sorf_mutation.avinput /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/humandb/ -thread 10 
+perl /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/annotate_variation.pl -regionanno -build hg38 -out /mnt/workspace/prabakaranLab/sorfcScore/data/annotation/region/hgmd/hgmd_region -dbtype wgRna /mnt/workspace/prabakaranLab/sorfcScore/data/variantMapToSorfs/hgmd/hgmd_sorf_mutation.avinput /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/humandb/  -thread 10 
+#perl /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/annotate_variation.pl -regionanno -build hg38 -out /mnt/workspace/prabakaranLab/sorfcScore/data/annotation/region/hgmd/hgmd_region -dbtype tfbsConsSites /mnt/workspace/prabakaranLab/sorfcScore/data/variantMapToSorfs/hgmd/hgmd_sorf_mutation.avinput /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/humandb/ -thread 10 
+
+perl /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/annotate_variation.pl -regionanno -build hg38 -out /mnt/workspace/prabakaranLab/sorfcScore/data/annotation/region/hgmd/hgmd_region -dbtype genomicSuperDups /mnt/workspace/prabakaranLab/sorfcScore/data/variantMapToSorfs/hgmd/hgmd_sorf_mutation.avinput /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/humandb/ -thread 10 
+perl /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/annotate_variation.pl -regionanno -build hg38 -out /mnt/workspace/prabakaranLab/sorfcScore/data/annotation/region/hgmd/hgmd_region -dbtype dgvMerged /mnt/workspace/prabakaranLab/sorfcScore/data/variantMapToSorfs/hgmd/hgmd_sorf_mutation.avinput /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/humandb/ -thread 10  
+perl /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/annotate_variation.pl -regionanno -build hg38 -out /mnt/workspace/prabakaranLab/sorfcScore/data/annotation/region/hgmd/hgmd_region -dbtype gwasCatalog /mnt/workspace/prabakaranLab/sorfcScore/data/variantMapToSorfs/hgmd/hgmd_sorf_mutation.avinput /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/humandb/ -thread 10 
+perl /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/annotate_variation.pl -regionanno -dbtype wgEncodeCaltechRnaSeqRawSignalRep1Gm12878CellLongpolyaBb12x75 -out /mnt/workspace/prabakaranLab/sorfcScore/data/annotation/region/hgmd/hgmd_region /mnt/workspace/prabakaranLab/sorfcScore/data/variantMapToSorfs/hgmd/hgmd_sorf_mutation.avinput /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/humandb/  -thread 10 
+perl /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/annotate_variation.pl -regionanno -dbtype wgEncodeBroadChipSeqPeaksGm12878H3k4me1 -out /mnt/workspace/prabakaranLab/sorfcScore/data/annotation/region/hgmd/hgmd_region /mnt/workspace/prabakaranLab/sorfcScore/data/variantMapToSorfs/hgmd/hgmd_sorf_mutation.avinput /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/humandb/ -thread 10 
+perl /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/annotate_variation.pl -regionanno -dbtype wgEncodeRegDnaseClustered /mnt/workspace/prabakaranLab/sorfcScore/data/variantMapToSorfs/hgmd/hgmd_sorf_mutation.avinput /mnt/workspace/prabakaranLab/sorfcScore/software/annovar/humandb/  -out /mnt/workspace/prabakaranLab/sorfcScore/data/annotation/region/hgmd/hgmd_region -thread 10 
+
+
+
+
+
+
 
 #gene
 perl annotate_variation.pl -out ex1 --geneanno -dbtype refGene -build hg38 example/ex1.avinput humandb/ -thread 10 
